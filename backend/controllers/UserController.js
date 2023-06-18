@@ -1,5 +1,6 @@
 const User = require("../models/User");
 
+//@desc GET all Users
 const getUsers = async (req, res) => {
 	try {
 		const users = await User.find();
@@ -13,19 +14,21 @@ const getUsers = async (req, res) => {
 	}
 };
 
+//@desc GET Single User
 const getSingleUser = async (req, res) => {
 	try {
 		const user = await User.findById(req.params.id);
 		if (user) {
 			res.status(200).json({ message: "this is the user", user });
 		} else {
-			res.status(204).json({ message: "user not available" });
+			res.status(200).json({ message: "user not available" });
 		}
 	} catch (error) {
 		res.status(500).json({ message: "internal server error", error });
 	}
 };
 
+//@desc POST  Users
 const createUser = async (req, res) => {
 	try {
 		const user = await User.create({
@@ -43,6 +46,7 @@ const createUser = async (req, res) => {
 	}
 };
 
+//@desc PUT  Users
 const updateUser = async (req, res) => {
 	try {
 		const updatedUser = await User.findByIdAndUpdate(
@@ -58,13 +62,14 @@ const updateUser = async (req, res) => {
 				updatedUser,
 			});
 		} else {
-			res.status(204).json({ message: "user not available" });
+			res.status(200).json({ message: "user not available" });
 		}
 	} catch (error) {
 		res.status(500).json({ message: "internal server error", error });
 	}
 };
 
+//@desc DELETE  User
 const deleteUser = async (req, res) => {
 	try {
 		const user = await User.findByIdAndDelete(req.params.id);
