@@ -10,12 +10,12 @@ const Router = express.Router();
 
 Router.route("/").get(getUsers);
 
-Router.route("/getSingle").get(getSingleUser);
+Router.route("/getSingle/:id").get(getSingleUser);
 
 Router.route("/createUser").post(createUser);
 
-Router.route("/updateUser").put(updateUser);
+Router.route("/updateUser/:id").put(updateUser);
 
-Router.route("/deleteUser").delete(deleteUser);
+Router.route("/deleteUser/:id").delete(deleteUser);
 
 module.exports = Router;
