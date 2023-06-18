@@ -43,8 +43,26 @@ const createUser = async (req, res) => {
 	}
 };
 
-const updateUser = (req, res) => {
-	res.status(200).json("this is the route of the update user");
+const updateUser = async (req, res) => {
+	try {
+		const updatedUser = await User.findByIdAndUpdate(
+			req.params.id,
+			req.body,
+			{
+				new: true,
+			}
+		);
+		if (updatedUser) {
+			res.status(200).json({
+				message: "user successfully updated",
+				updatedUser,
+			});
+		} else {
+			res.status(204).json({ message: "user not available" });
+		}
+	} catch (error) {
+		res.status(500).json({ message: "internal server error", error });
+	}
 };
 
 const deleteUser = async (req, res) => {
