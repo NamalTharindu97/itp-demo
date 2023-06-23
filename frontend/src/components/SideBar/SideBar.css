@@ -1,0 +1,9 @@
+.side-bar {
+	display: flex;
+	background-image: var(--lightBuleGradient);
+	height: 95vh;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+}

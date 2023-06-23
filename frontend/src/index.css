@@ -57,7 +57,14 @@
 		#57d872,
 		#48cb66
 	);
-
+	--lightBuleGradient: radial-gradient(
+		circle,
+		#eaeaea,
+		#dbe5f7,
+		#b9e5ff,
+		#8ae7fa,
+		#64e8e0
+	);
 	/* TRANSPARENT COLORS */
 	--transparent: transparent;
 	--transparentBlack1: rgba(0, 0, 0, 0.1);
@@ -79,6 +86,11 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: var(--regularFont);
+	height: 100vh;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.page-container {
+	height: 100vh;
 }
