@@ -1,7 +1,15 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import UserAdminPanal from "./pages/UserPanel/UserAdminPanal";
+
 function App() {
 	return (
 		<div className="App">
-			<div>my name is app</div>
+			<Router>
+				<Routes>
+					<Route path="/" element={<UserAdminPanal />} />
+				</Routes>
+			</Router>
 		</div>
 	);
 }

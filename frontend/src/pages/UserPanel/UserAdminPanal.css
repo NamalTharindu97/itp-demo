@@ -1,0 +1,11 @@
+.page-container {
+	display: flex;
+}
+
+.left-container {
+	flex: 1;
+}
+
+.right-container {
+	flex: 6;
+}
