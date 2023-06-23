@@ -1,9 +1,31 @@
 .side-bar {
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background-image: var(--lightBuleGradient);
 	height: 95vh;
 	margin-top: 20px;
 	margin-left: 10px;
 	margin-bottom: 10px;
 	border-radius: 15px;
+}
+
+.table {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.row {
+	margin-top: 10px;
+	padding: 5px 80px;
+	border-radius: 10px;
+	transition: background-color 0.3s ease;
+	cursor: pointer;
+}
+
+.row:hover {
+	background-color: aliceblue;
 }
